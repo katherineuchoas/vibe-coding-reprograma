@@ -913,173 +913,76 @@ h2 em,
   font-weight: 600;
 }
 
-@media (min-width: 1500px) {
-  .hero {
-    min-height: 780px;
-  }
+/* Base: layout desenhado primeiro para telas pequenas. */
+.site-header, .site-footer, .section-wrap { width: min(100% - 40px, 1320px); }
+.site-header { height: 75px; }
+.wordmark { gap: 8px; font-size: 12px; }
+.wordmark__mark { width: 31px; height: 31px; }
+.main-nav { gap: 14px; font-size: 11px; }
+.hero { min-height: auto; padding-block: 64px 72px; grid-template-columns: 1fr; gap: 42px; }
+.hero h1 { font-size: clamp(52px, 14vw, 84px); }
+.hero__intro { max-width: 480px; font-size: 15px; }
+.hero-art { width: min(100%, 430px); justify-self: center; }
+.hero-art__frame { min-height: 0; aspect-ratio: 1 / 0.92; }
+.hero__side-label { display: none; }
+.projects { padding-block: 68px; }
+.section-heading { align-items: flex-start; flex-direction: column; gap: 14px; margin-bottom: 30px; }
+.section-heading__aside { text-align: left; }
+.project-grid { grid-template-columns: 1fr; gap: 17px; }
+.project-card__visual { min-height: 245px; }
+.project-card__details { min-height: 0; padding: 25px 22px 27px; }
+.about { padding-block: 68px; grid-template-columns: 1fr; gap: 30px; }
+.about__stamp { width: 118px; font-size: 10px; }
+.about__stamp-star { font-size: 19px; }
+.about__side-note { display: none; }
+.about__copy > p:last-child { margin-top: 20px; }
+.connect { min-height: 0; padding: 38px 24px; align-items: flex-start; flex-direction: column; gap: 28px; }
+.connect__links { width: min(100%, 360px); flex-basis: auto; }
+.connect__spark { right: -25px; bottom: 100px; font-size: 170px; }
+.site-footer { min-height: 95px; flex-wrap: wrap; }
+.site-footer p { order: 3; width: 100%; padding-bottom: 18px; text-align: center; }
+
+/* Em telas médias, aproveitamos a largura sem abrir mão da leitura. */
+@media (min-width: 680px) {
+  .site-header, .site-footer, .section-wrap { width: min(100% - 64px, 1320px); }
+  .site-header { height: 82px; }
+  .wordmark { font-size: 13px; }
+  .main-nav { gap: 24px; font-size: 12px; }
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .project-card__visual { min-height: 260px; }
+  .about { grid-template-columns: 0.55fr 1.5fr; align-items: center; gap: 32px; }
+  .about__stamp { width: min(100%, 150px); font-size: 12px; }
+  .connect { padding: 48px; }
+  .site-footer { min-height: 100px; flex-wrap: nowrap; }
+  .site-footer p { order: initial; width: auto; padding-bottom: 0; }
 }
 
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr 0.8fr;
-    gap: 45px;
-  }
-
-  .hero-art__frame {
-    min-height: 350px;
-  }
-
-  .about {
-    grid-template-columns: 0.55fr 1.5fr;
-  }
-
-  .about__side-note {
-    display: none;
-  }
-
-  .connect {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  .connect__links {
-    width: min(100%, 360px);
-    flex-basis: auto;
-  }
+/* Em telas maiores, a composição editorial ganha escala. */
+@media (min-width: 960px) {
+  .site-header, .site-footer, .section-wrap { width: min(100% - 96px, 1320px); }
+  .site-header { height: 92px; }
+  .wordmark { gap: 11px; font-size: 14px; }
+  .wordmark__mark { width: 35px; height: 35px; }
+  .main-nav { gap: clamp(24px, 4vw, 58px); font-size: 13px; }
+  .hero { min-height: min(760px, calc(100svh - 92px)); padding-block: clamp(76px, 10vw, 142px) clamp(90px, 11vw, 150px); grid-template-columns: 1fr 0.85fr; gap: clamp(44px, 9vw, 140px); }
+  .hero h1 { font-size: clamp(64px, 8.5vw, 116px); }
+  .hero-art { width: min(100%, 500px); justify-self: end; }
+  .hero-art__frame { min-height: 400px; aspect-ratio: 1 / 1.04; }
+  .hero__side-label { display: block; }
+  .section-heading { align-items: end; flex-direction: row; justify-content: space-between; gap: 32px; margin-bottom: 45px; }
+  .section-heading__aside { text-align: right; }
+  .project-grid { gap: 24px; }
+  .project-card__visual { min-height: 285px; }
+  .project-card__details { padding: 30px; }
+  .about { padding-block: clamp(75px, 10vw, 135px); grid-template-columns: 0.65fr 1.6fr 0.55fr; gap: 40px; }
+  .about__stamp { width: min(100%, 190px); font-size: 13px; }
+  .about__side-note { display: block; }
+  .connect { min-height: 330px; padding: clamp(45px, 7vw, 80px); align-items: center; flex-direction: row; justify-content: space-between; gap: 48px; }
+  .connect__links { width: min(100%, 250px); flex: 0 0 250px; }
+  .connect__spark { right: 28%; bottom: -94px; font-size: 245px; }
 }
 
-@media (max-width: 640px) {
-  .site-header,
-  .site-footer,
-  .section-wrap {
-    width: min(100% - 40px, 1320px);
-  }
-
-  .site-header {
-    height: 75px;
-  }
-
-  .wordmark {
-    gap: 8px;
-    font-size: 12px;
-  }
-
-  .wordmark__mark {
-    width: 31px;
-    height: 31px;
-  }
-
-  .main-nav {
-    gap: 17px;
-    font-size: 11px;
-  }
-
-  .main-nav a:nth-child(2) {
-    display: none;
-  }
-
-  .hero {
-    min-height: auto;
-    padding-block: 72px 80px;
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .hero h1 {
-    font-size: clamp(68px, 17vw, 96px);
-  }
-
-  .hero__intro {
-    max-width: 480px;
-    font-size: 15px;
-  }
-
-  .hero-art {
-    width: min(100%, 430px);
-    justify-self: center;
-  }
-
-  .hero-art__frame {
-    min-height: 0;
-    aspect-ratio: 1 / 0.92;
-  }
-
-  .hero__side-label {
-    display: none;
-  }
-
-  .projects {
-    padding-block: 76px;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 30px;
-  }
-
-  .section-heading__aside {
-    text-align: left;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 17px;
-  }
-
-  .project-card__visual {
-    min-height: 255px;
-  }
-
-  .project-card__details {
-    min-height: 0;
-    padding: 25px 22px 27px;
-  }
-
-  .about {
-    padding-block: 75px;
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .about__stamp {
-    width: 118px;
-    font-size: 10px;
-  }
-
-  .about__stamp-star {
-    font-size: 19px;
-  }
-
-  .about__copy > p:last-child {
-    margin-top: 20px;
-  }
-
-  .connect {
-    min-height: 0;
-    padding: 40px 25px;
-  }
-
-  .connect__spark {
-    right: -25px;
-    bottom: 100px;
-    font-size: 170px;
-  }
-
-  .site-footer {
-    min-height: 95px;
-    flex-wrap: wrap;
-  }
-
-  .site-footer p {
-    order: 3;
-    width: 100%;
-    padding-bottom: 18px;
-    text-align: center;
-  }
-}
+@media (min-width: 1500px) { .hero { min-height: 780px; } }
 
 @media (prefers-reduced-motion: reduce) {
   *,
