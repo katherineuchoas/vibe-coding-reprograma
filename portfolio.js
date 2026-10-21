@@ -13,12 +13,22 @@ const colorPreference = window.matchMedia("(prefers-color-scheme: dark)");
 if (colorPreference.addEventListener) colorPreference.addEventListener("change", updateThemeColor);
 else if (colorPreference.addListener) colorPreference.addListener(updateThemeColor);
 
+const artworkTemplates = {
+  vibe: '<span class="project-art__shape project-art__shape--vibe" aria-hidden="true">vibe<br /><em>coding</em></span><span class="project-art__orbit" aria-hidden="true"></span>',
+  quiz: '<span class="project-art__shape project-art__shape--quiz" aria-hidden="true">Q<span>?</span></span><span class="project-art__badge" aria-hidden="true">quiz<br />time!</span>',
+  space: '<span class="project-art__star project-art__star--one" aria-hidden="true">✳</span><span class="project-art__star project-art__star--two" aria-hidden="true">✦</span><span class="project-art__shape project-art__shape--space" aria-hidden="true">space<br /><em>flight news</em></span>',
+  finance: '<span class="project-art__shape project-art__shape--finance" aria-hidden="true">IA no<br /><em>dia a dia</em></span><span class="project-art__note" aria-hidden="true">perguntar<br />· pensar · cuidar</span>',
+  data: '<span class="project-art__shape project-art__shape--data" aria-hidden="true"><i></i><i></i><i></i><b>dados<br />em relação</b></span>',
+  school: '<span class="project-art__shape project-art__shape--school" aria-hidden="true"><i>gestão</i><i>escolar</i><i>Java · Spring</i></span>',
+  library: '<span class="project-art__shape project-art__shape--library" aria-hidden="true"><i></i><i></i><i></i><b>uma estante<br />de possibilidades</b></span>',
+};
+
 function renderProject(project) {
   const article = document.createElement("article");
   article.className = "project-card";
 
   const visual = document.createElement("a");
-  visual.className = `project-card__visual project-art--${project.arte}`;
+  const artworkKind = Object.hasOwn(artworkTemplates, project.arte) ? project.arte : "vibe";\n  visual.className = `project-card__visual project-art--${artworkKind}`;
   visual.href = project.url;
   visual.target = "_blank";
   visual.rel = "noopener noreferrer";
@@ -68,7 +78,7 @@ function renderProject(project) {
 
   details.append(type, title, description, tags, link);
   article.append(visual, details);
-  if (project.arte === "library") article.classList.add("project-card--team");
+  if (artworkKind === "library") article.classList.add("project-card--team");
   return article;
 }
 
