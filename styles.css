@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --paper: #f7f4ee;
   --paper-deep: #efe9df;
   --ink: #292536;
@@ -9,6 +9,10 @@
   --coral: #ee9b87;
   --butter: #f3d981;
   --line: rgba(41, 37, 54, 0.16);
+  --surface: #fbf9f5;
+  --connect-bg: var(--butter);
+  --art-ink: #292536;
+  --art-accent: #796391;
   --sans: "DM Sans", "Avenir Next", Avenir, sans-serif;
   --serif: "Playfair Display", Georgia, serif;
   font-family: var(--sans);
@@ -409,7 +413,7 @@ h2 em,
   min-width: 0;
   display: flex;
   flex-direction: column;
-  background: #fbf9f5;
+  background: var(--surface);
   border: 1px solid var(--line);
 }
 
@@ -451,7 +455,7 @@ h2 em,
 
 .project-art--vibe { background: var(--lavender); }
 .project-art--quiz { background: var(--coral); }
-.project-art--space { background: #35384e; color: #f7f4ee; }
+.project-art--space { background: var(--space-bg, #35384e); color: #f7f4ee; }
 .project-art--finance { background: var(--butter); }
 .project-art--data { background: #d6c9b6; }
 .project-art--school { background: #c7d2c1; }
@@ -486,7 +490,7 @@ h2 em,
   transform: rotate(-7deg);
 }
 
-.project-art__shape--vibe em { color: #796391; }
+.project-art__shape--vibe em { color: var(--art-accent); }
 
 .project-art__orbit {
   width: 74%;
@@ -826,7 +830,7 @@ h2 em,
   justify-content: space-between;
   gap: 48px;
   overflow: hidden;
-  background: var(--butter);
+  background: var(--connect-bg);
 }
 
 .connect__copy {
@@ -839,7 +843,7 @@ h2 em,
 }
 
 .connect h2 em {
-  color: #796391;
+  color: var(--lavender-deep);
 }
 
 .connect__links {
@@ -993,4 +997,104 @@ h2 em,
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+
+/* Preferência de tema do sistema operacional; não há chave manual na Fase 1. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #211f2a;
+    --paper-deep: #302b39;
+    --ink: #f4eff7;
+    --muted: #c5bdce;
+    --lavender-deep: #d2c4f2;
+    --line: rgba(244, 239, 247, 0.2);
+    --surface: #2c2935;
+    --connect-bg: #574d3a;
+    --space-bg: #35384e;
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse at 92% 19%, rgba(199, 184, 237, 0.08), transparent 23rem),
+      var(--paper);
+  }
+
+  .about__photo {
+    border-color: var(--paper);
+  }
+
+  .project-card {
+    border-color: var(--line);
+  }
+
+  .hero-art__frame {
+    background: #75658c;
+    color: #fff;
+  }
+
+  .hero-art__word--idea,
+  .hero-art__word--impact {
+    color: #fff;
+  }
+
+  .project-art__shape--finance em {
+    color: var(--lavender-deep);
+  }
+}
+
+.about__identity {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.about__photo {
+  width: clamp(112px, 30vw, 176px);
+  aspect-ratio: 1;
+  display: block;
+  object-fit: cover;
+  object-position: center 28%;
+  border: 4px solid var(--paper);
+  outline: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper-deep);
+}
+
+.about__copy h2 {
+  font-size: clamp(36px, 9vw, 64px);
+  overflow-wrap: anywhere;
+}
+
+.about__short-bio {
+  max-width: 40ch;
+  margin: 20px 0 12px;
+  color: var(--ink);
+  font-size: clamp(15px, 3.8vw, 17px);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.about__presentation {
+  max-width: 545px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.project-load-error {
+  padding: 18px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 680px) {
+  .about__identity { justify-content: flex-start; }
+  .about__photo { width: min(100%, 150px); }
+}
+
+@media (min-width: 960px) {
+  .about__photo { width: min(100%, 190px); }
 }
