@@ -1,7 +1,7 @@
 /* Dados locais do portfólio. Na Fase 2, estas funções passam a consultar o Supabase. */
 const perfil = {
   nome: "Katherine Uchoa",
-  bio: "Desenvolvedora de software que transforma curiosidade em projetos e aprendizado.",
+  bio: "Desenvolvedora de software, curiosa por tecnologia e criação.",
   fotoUrl: "assets/katherine-uchoas.jpeg",
   fotoAlt: "Foto de perfil de Katherine Uchoa",
   linkedin: "https://www.linkedin.com/in/katherine-uchoas-42037a97",
