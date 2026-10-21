@@ -28,7 +28,8 @@ function renderProject(project) {
   article.className = "project-card";
 
   const visual = document.createElement("a");
-  const artworkKind = Object.hasOwn(artworkTemplates, project.arte) ? project.arte : "vibe";\n  visual.className = `project-card__visual project-art--${artworkKind}`;
+  const artworkKind = Object.hasOwn(artworkTemplates, project.arte) ? project.arte : "vibe";
+  visual.className = "project-card__visual project-art--" + artworkKind;
   visual.href = project.url;
   visual.target = "_blank";
   visual.rel = "noopener noreferrer";
@@ -39,9 +40,9 @@ function renderProject(project) {
   eyebrow.textContent = project.chamada;
   visual.append(eyebrow);
 
-  // Este HTML é apenas decoração estática versionada junto com os dados locais.
+  // A arte é fixa e separada do conteúdo que poderá vir do Supabase.
   const artwork = document.createElement("span");
-  artwork.innerHTML = project.desenho;
+  artwork.innerHTML = artworkTemplates[artworkKind];
   visual.append(artwork);
   const arrow = document.createElement("span");
   arrow.className = "project-art__arrow";
