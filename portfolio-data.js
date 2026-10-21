@@ -20,7 +20,6 @@ const blocos = [
     acessibilidade: "Ver o portfólio Vibe Coding — Reprograma no GitHub",
     arte: "vibe",
     chamada: "PROJETO 01 · REPROGRAMa",
-    desenho: '<span class="project-art__shape project-art__shape--vibe" aria-hidden="true">vibe<br /><em>coding</em></span><span class="project-art__orbit" aria-hidden="true"></span>',
   },
   {
     titulo: "Chiquinhohoots",
@@ -31,7 +30,6 @@ const blocos = [
     acessibilidade: "Ver o aplicativo Chiquinhohoots no GitHub",
     arte: "quiz",
     chamada: "PROJETO 02 · MOBILE",
-    desenho: '<span class="project-art__shape project-art__shape--quiz" aria-hidden="true">Q<span>?</span></span><span class="project-art__badge" aria-hidden="true">quiz<br />time!</span>',
   },
   {
     titulo: "Space Flight News",
@@ -42,7 +40,6 @@ const blocos = [
     acessibilidade: "Ver o projeto Space Flight News no GitHub",
     arte: "space",
     chamada: "PROJETO 03 · WEB",
-    desenho: '<span class="project-art__star project-art__star--one" aria-hidden="true">✳</span><span class="project-art__star project-art__star--two" aria-hidden="true">✦</span><span class="project-art__shape project-art__shape--space" aria-hidden="true">space<br /><em>flight news</em></span>',
   },
   {
     titulo: "IA para gerenciar suas finanças",
@@ -53,7 +50,6 @@ const blocos = [
     acessibilidade: "Ver o material IA para gerenciar suas finanças no GitHub",
     arte: "finance",
     chamada: "PROJETO 04 · EDUCAÇÃO + IA",
-    desenho: '<span class="project-art__shape project-art__shape--finance" aria-hidden="true">IA no<br /><em>dia a dia</em></span><span class="project-art__note" aria-hidden="true">perguntar<br />· pensar · cuidar</span>',
   },
   {
     titulo: "Gestão acadêmica",
@@ -64,7 +60,6 @@ const blocos = [
     acessibilidade: "Ver o projeto de banco de dados acadêmico no GitHub",
     arte: "data",
     chamada: "PROJETO 05 · DADOS",
-    desenho: '<span class="project-art__shape project-art__shape--data" aria-hidden="true"><i></i><i></i><i></i><b>dados<br />em relação</b></span>',
   },
   {
     titulo: "Gestão escolar",
@@ -75,7 +70,6 @@ const blocos = [
     acessibilidade: "Ver o projeto de gestão escolar no GitHub",
     arte: "school",
     chamada: "PROJETO 06 · BACKEND",
-    desenho: '<span class="project-art__shape project-art__shape--school" aria-hidden="true"><i>gestão</i><i>escolar</i><i>Java · Spring</i></span>',
   },
   {
     titulo: "Library Management System",
@@ -86,7 +80,6 @@ const blocos = [
     acessibilidade: "Ver o sistema de biblioteca, desenvolvido em equipe, no GitHub",
     arte: "library",
     chamada: "PROJETO 07 · EM EQUIPE",
-    desenho: '<span class="project-art__shape project-art__shape--library" aria-hidden="true"><i></i><i></i><i></i><b>uma estante<br />de possibilidades</b></span>',
   },
 ];
 
